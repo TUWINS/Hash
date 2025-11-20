@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -35,5 +36,13 @@ try {
                 total++;
                 avg += hashTable.get(key);
             }
+              avg /= total;
+            bw.write("\nTotal: " + total + ", Promedio: " + avg);
+            bw.close();
+            System.out.println("Hash completado.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 }
